@@ -138,10 +138,19 @@ button:disabled {
 .compose {
     display: flex;
     flex-shrink: 0;
+    flex-direction:column;
     margin-top: 16px;
-    padding: 24px;
+    padding: 8px 8px 8px 8px;
 }
 
+@media (min-width:450px)
+{
+    .compose
+    {
+        flex-direction:row;
+        padding:24px;
+    }
+}
 .compose form {
     display: flex;
     flex-grow: 1;
