@@ -93,8 +93,8 @@ button:disabled {
     height: 100vh;
     color: white;
     background: #333744;
-    width: 225px;
-    overflow-y: scroll
+    min-width:120px;
+    overflow-y: scroll;
 }
 
 /* Chat styles */
@@ -150,6 +150,10 @@ button:disabled {
     {
         flex-direction:row;
         padding:24px;
+    }
+    .chat__sidebar
+    {
+        min-width:230px;
     }
 }
 .compose form {
