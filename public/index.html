@@ -12,12 +12,30 @@
                 <h1>Join</h1>
                 <form action="/chat.html">
                     <label>Display Name</label>
-                    <input type="text" name="username" placeholder="Display Name" required>
+                    <input type="text" name="username" placeholder="Display Name" autocomplete="off" required>
                     <label>Room</label>
-                    <input type="text" name="room" placeholder="Room" required>
+                    <div id="active-rooms"></div>
+                    <!-- <input type="text" name="room" placeholder="Room" required> -->
+                    <!-- <input id="room" type="text" name="room" placeholder="Room" autocomplete="off" required> -->
                     <button>Join</button>
                 </form>
             </div>
         </div>
+
+        <script id="activerooms-template" type="text/html">
+            <input id="room" type="text" name="room" placeholder="Room" list="rooms" autocomplete="off" required>
+            <datalist id="rooms">
+                {{#users}}
+                <option>{{room}}</option>
+                {{/users}}
+            </datalist>
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script> 
+        
+        <script src = "/socket.io/socket.io.js"></script>
+        <script src = "/js/index.js"></script>
     </body>
 </html>
